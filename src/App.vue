@@ -1,24 +1,23 @@
 <template>
-  <div>
-    <div>n is {{ n }}</div>
-    <div class="row">
-      <Cell @click="onClickCell(0, $event)" :n="n"/>
-      <Cell @click="onClickCell(1, $event)" :n="n"/>
-      <Cell @click="onClickCell(2, $event)" :n="n"/>
+  <div class="wrapper">
+    <div class="chess">
+      <div class="row">
+        <Cell @click="onClickCell(0, $event)" :n="n"/>
+        <Cell @click="onClickCell(1, $event)" :n="n"/>
+        <Cell @click="onClickCell(2, $event)" :n="n"/>
+      </div>
+      <div class="row">
+        <Cell @click="onClickCell(3, $event)" :n="n"/>
+        <Cell @click="onClickCell(4, $event)" :n="n"/>
+        <Cell @click="onClickCell(5, $event)" :n="n"/>
+      </div>
+      <div class="row">
+        <Cell @click="onClickCell(6, $event)" :n="n"/>
+        <Cell @click="onClickCell(7, $event)" :n="n"/>
+        <Cell @click="onClickCell(8, $event)" :n="n"/>
+      </div>
+      <div>Result: {{result === null ? 'Draw':`Winner is ${result}`}}</div>
     </div>
-    <div class="row">
-      <Cell @click="onClickCell(3, $event)" :n="n"/>
-      <Cell @click="onClickCell(4, $event)" :n="n"/>
-      <Cell @click="onClickCell(5, $event)" :n="n"/>
-    </div>
-    <div class="row">
-      <Cell @click="onClickCell(6, $event)" :n="n"/>
-      <Cell @click="onClickCell(7, $event)" :n="n"/>
-      <Cell @click="onClickCell(8, $event)" :n="n"/>
-    </div>
-    <div>{{map}}</div>
-    <div>{{result}}</div>
-
   </div>
 </template>
 
@@ -35,7 +34,7 @@
           [null, null, null],
           [null, null, null],
         ],
-        result: false
+        result: null
       }
     },
     methods: {
@@ -84,6 +83,12 @@
 </script>
 
 <style>
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
   .row {
     display: flex;
   }

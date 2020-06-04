@@ -1,11 +1,11 @@
 <template>
-  <div>
-    {{n}}
+
+
     <div class="cell" v-on:click="onClickCell">
       <template v-if='a'>{{text}}</template>
       <template v-else></template>
     </div>
-  </div>
+
 </template>
 
 <script>
