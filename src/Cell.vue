@@ -6,7 +6,6 @@
       <template v-else></template>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -20,7 +19,7 @@
         if(this.text!==''){return}
         this.a = true
         this.text = this.n % 2 === 0 ? 'X' : 'O'
-        this.$emit('click')
+        this.$emit('click', this.text)
       }
     }
   }
